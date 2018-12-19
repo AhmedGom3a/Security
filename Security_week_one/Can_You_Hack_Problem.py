@@ -1,32 +1,19 @@
 Alpha=[]
 Alpha2=[]
 matrix=[[],[],[],[],[]]
-plain=raw_input() # L A J R 
+plain=raw_input() 
 cipher1=raw_input()
 plain=plain.replace("J","I")
 import itertools
 All=list(itertools.permutations(["A","B","C","D","E","F","G","H","I"]))
 
 
-'''key=key.replace("J","I")
-
-for  L in key:
-	Alpha=Alpha+[L]	
-'''
 x = 0
 while x<9 :
 	if chr(65+x)!='J':
 		Alpha=Alpha+[chr(65+x)]	
 	x+=1
-
-'''x = 0
-while x<25:
-	for L in Alpha:
-		if L not in Alpha2:
-			Alpha2=Alpha2+[L]
-	x+=1
-'''			
-
+			
 i=0
 plain2=""
 while i<len(plain):
@@ -91,20 +78,16 @@ while cipher!=cipher1:
 
 			if x1==x2:
 
-			#if y1<y2:
+			
 				cipher=cipher+matrix[x1][(y1+1)%3]
 				cipher=cipher+matrix[x1][(y2+1)%3]
-				'''else:
-					cipher=cipher+matrix[x1][(y2+1)%5]
-					cipher=cipher+matrix[x1][(y1+1)%5]'''
+				
 			elif y1==y2:
 
-				#if x1<x2:
+				
 				cipher=cipher+matrix[(x1+1)%3][y1]
 				cipher=cipher+matrix[(x2+1)%3][y1]
-				'''else:
-					cipher=cipher+matrix[(x2+1)%5][y1]
-					cipher=cipher+matrix[(x1+1)%5][y1]'''
+				
 			else:
 				cipher=cipher+matrix[x1][y2]
 				cipher=cipher+matrix[x2][y1]
